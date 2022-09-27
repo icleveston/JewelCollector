@@ -62,9 +62,10 @@ namespace JewelCollector
 
         public void Get(){
 
+            map.GetItem<IRechargeable>(this.x, this.y)?.Recharge(this);
+
             Bag = Bag.Concat(map.GetJewels(this.x, this.y)).ToList();
 
-            map.GetItem<IRechargeable>(this.x, this.y)?.Recharge(this);
         }
 
         public void Print()
