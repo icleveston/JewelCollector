@@ -62,9 +62,7 @@ namespace JewelCollector
 
         public void Get(){
 
-            List<Jewel> NearJewels = map.GetJewels(this.x, this.y);
-
-            foreach (Jewel j in NearJewels) Bag.Add(j);
+            Bag = Bag.Concat(map.GetJewels(this.x, this.y)).ToList();
 
             map.GetItem<IRechargeable>(this.x, this.y)?.Recharge(this);
         }
