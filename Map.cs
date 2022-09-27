@@ -49,15 +49,9 @@ namespace JewelCollector
                 GenerateRandom();
         }
 
-        public void Insert(ItemMap Item, int x, int y)
-        {
-            Matriz[x, y] = Item;
-        }
+        public void Insert(ItemMap Item, int x, int y) => Matriz[x, y] = Item;
 
-        public void Insert(ItemMap Item)
-        {
-            Matriz[rand.Next(w), rand.Next(h)] = Item;
-        }
+        public void Insert(ItemMap Item) => Matriz[rand.Next(w), rand.Next(h)] = Item;
 
         public Radioactive? Update(int x_old, int y_old, int x, int y)
         {
@@ -125,9 +119,7 @@ namespace JewelCollector
             };
         }
 
-        private bool IsAllowed(int x, int y){
-            return Matriz[x, y] is Empty or Radioactive;
-        }
+        private bool IsAllowed(int x, int y) => Matriz[x, y] is Empty or Radioactive;
 
         public void Print() {
 
